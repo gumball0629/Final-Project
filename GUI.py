@@ -3,8 +3,9 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 
 if __name__ == "__main__":
-    root = Tk()
-
+    root = Tk()  
+    root.title('Face Recognition')
+    root.geometry('300x400') 
     #setting up a tkinter canvas with scrollbars
     frame = Frame(root, bd=2, relief=SUNKEN)
     frame.grid_rowconfigure(0, weight=1)
@@ -19,15 +20,31 @@ if __name__ == "__main__":
     yscroll.config(command=canvas.yview)
     frame.pack(fill=BOTH,expand=1)
 
-
-    #function to be called when mouse is clicked
-    def printcoords():
+    #choose 
+    def choose():
+        global filename
         File = filedialog.askopenfilename(parent=root, initialdir="C:/",title='Choose an image.')
         filename = ImageTk.PhotoImage(Image.open(File))
         canvas.image = filename  # <--- keep reference of your image
         canvas.create_image(0,0,anchor='nw',image=filename)
-        #拿filename來predict
+        
+    var = StringVar()
+    on_hit = False
+    def hit_predict():
+        global on_hit
+        if on_hit == False:
+            on_hit = True
+            var.set('機率')
+        else:
+            var.set('')
+            on_hit = False  
+            
+    #predict   
+    def predict():
+        hit_predict()
 
-    Button(root,text='choose',command=printcoords).pack()
-    
+    Button(root,text='choose',command=choose).pack()
+    Button(root,text='predict',command=predict).pack()
+    label_text = Label(root, textvariable=var)
+    label_text.pack()     
     root.mainloop()
