@@ -34,13 +34,14 @@ if __name__ == "__main__":
         global on_hit
         if on_hit == False:
             on_hit = True
-            var.set('機率')
+            var.set('機率')###output機率最高的人###
         else:
             var.set('')
             on_hit = False  
             
     #predict   
     def predict():
+        ###預測加在這邊###
         hit_predict()
 
     Button(root,text='choose',command=choose).pack()
