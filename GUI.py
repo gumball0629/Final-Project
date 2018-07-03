@@ -30,7 +30,7 @@ if __name__ == "__main__":
         
     var = StringVar()
     on_hit = False
-    def hit_predict():#output機率最高的人
+    def hit_predict():
         global on_hit
         if on_hit == False:
             on_hit = True
@@ -41,7 +41,6 @@ if __name__ == "__main__":
             
     #predict   
     def predict():
-        #預測加在這邊
         hit_predict()
 
     Button(root,text='choose',command=choose).pack()
