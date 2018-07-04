@@ -29,20 +29,10 @@ if __name__ == "__main__":
         canvas.create_image(0,0,anchor='nw',image=filename)
         
     var = StringVar()
-    on_hit = False
-    def hit_predict():
-        global on_hit
-        if on_hit == False:
-            on_hit = True
-            var.set('機率')###output機率最高的人###
-        else:
-            var.set('')
-            on_hit = False  
-            
     #predict   
     def predict():
         ###預測加在這邊###
-        hit_predict()
+        var.set('機率')###output機率最高的人###
 
     Button(root,text='choose',command=choose).pack()
     Button(root,text='predict',command=predict).pack()
