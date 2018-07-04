@@ -34,7 +34,6 @@ if __name__ == "__main__":
     #predict   
     def predict():
         tp = run.pre(File)
-        print(tp)
         
         var.set('Top-5:\n'+str(int(tp[0][0]))+': '+str(round(tp[1][0],3)*100)+'%\n'+
                  str(int(tp[0][1]))+': '+str(round(tp[1][1],3)*100)+'%\n'+
