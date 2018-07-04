@@ -29,24 +29,31 @@ tt_f,tt_lb = read_hdf5(testh5_path)
 
 
 model = Sequential()
-model.add(Convolution2D(batch_input_shape=(None,1,64,64),filters=32,kernel_size=(5,5),padding='valid',data_format='channels_first'))
+model.add(Convolution2D(batch_input_shape=(None,1,64,64),filters=64,kernel_size=(3,3),padding='same',dilation_rate=2,data_format='channels_first'))
+model.add(Convolution2D(filters=64,kernel_size=(3,3),padding='same',data_format='channels_first'))
 model.add(Activation('relu'))
 
-model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='valid',data_format='channels_first'))
+model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='same',data_format='channels_first'))
 
-model.add(Convolution2D(filters=64,kernel_size=(5,5),padding='valid',data_format='channels_first'))
+model.add(Convolution2D(filters=128,kernel_size=(3,3),padding='same',data_format='channels_first'))
+model.add(Convolution2D(filters=128,kernel_size=(3,3),padding='same',data_format='channels_first'))
 model.add(Activation('relu'))
 
-model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='valid',data_format='channels_first'))
+model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='same',data_format='channels_first'))
 
-model.add(Convolution2D(filters=128,kernel_size=(5,5),padding='valid',data_format='channels_first'))
+model.add(Convolution2D(filters=256,kernel_size=(3,3),padding='same',data_format='channels_first'))
+model.add(Convolution2D(filters=256,kernel_size=(3,3),padding='same',data_format='channels_first'))
+model.add(Convolution2D(filters=256,kernel_size=(3,3),padding='same',data_format='channels_first'))
 model.add(Activation('relu'))
 
-model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='valid',data_format='channels_first'))
+model.add(MaxPooling2D(pool_size=(2,2),strides=None,padding='same',data_format='channels_first'))
+
 
 model.add(Flatten())
 
-model.add(Dense(1024))
+model.add(Dense(4096))
+model.add(Activation('relu'))
+model.add(Dense(4096))
 model.add(Activation('relu'))
 model.add(Dense(50))
 model.add(Activation('softmax'))
@@ -69,5 +76,4 @@ print('\ntest loss: ', loss)
 print('\ntest accuracy: ', acc)
 
 model.save('train.h5')
-
 
