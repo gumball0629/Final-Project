@@ -66,7 +66,7 @@ model.compile(optimizer=adam,loss='categorical_crossentropy',metrics=['accuracy'
 
 print('Training ......')
 
-model.fit(tn_f,tn_lb,epochs=10,batch_size=50,verbose=1)
+model.fit(tn_f,tn_lb,epochs=50,batch_size=50,verbose=1)
 
 print('Testing ......')
 
@@ -76,4 +76,3 @@ print('\ntest loss: ', loss)
 print('\ntest accuracy: ', acc)
 
 model.save('train.h5')
-
