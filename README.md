@@ -45,6 +45,8 @@ os: 文件目錄處裡
 
 一開始我們的識別率一直都偏低:
 
+![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot-from-2018-07-05-11-47-21.png)
+
 之後將 epochs 從10改成50後，識別率就大大的提升:
 
 ## 5. The task allocation of each member and how you integrate the task outputs from all members
