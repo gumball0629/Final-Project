@@ -45,9 +45,15 @@ os: 文件目錄處裡
 
 一開始我們的識別率一直都偏低:
 
-![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot-from-2018-07-05-11-47-21.png)
+![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot5.png)
 
 之後將 epochs 從10改成50後，識別率就大大的提升:
+
+也可以從數據中看到，識別率慢慢的在增加，過程中有一些浮動
+
+![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot4.png)
+
+![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot3.png)
 
 ## 5. The task allocation of each member and how you integrate the task outputs from all members
 
@@ -60,6 +66,8 @@ os: 文件目錄處裡
 ## 6. Any bonus features or functionalities included in your recognizer
 
 我們做了GUI: 
+
+![image](https://github.com/gumball0629/Final-Project/blob/master/FP_IML_Data/Screenshot2.png)
 
 ## 7. How you feel about doing this project
 
