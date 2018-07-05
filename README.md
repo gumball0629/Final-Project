@@ -75,7 +75,7 @@ os: 文件目錄處裡
 
 ## 參考資料
 
-[VGG] (https://ithelp.ithome.com.tw/articles/10192162)
+VGG: https://ithelp.ithome.com.tw/articles/10192162
 
 
 
