@@ -71,6 +71,12 @@ os: 文件目錄處裡
 
 ## 7. How you feel about doing this project
 
+我們從這個做中學到了，VGGface 與 VGG16 的運用，也學到如何將檔案打包成exe檔
+
+## 參考資料
+
+[VGG] (https://ithelp.ithome.com.tw/articles/10192162)
+
 
 
 
